@@ -1,12 +1,11 @@
 import React from 'react';
-import Capsule from './Capsule';
-import ImageSlider from './components/ImageSlider';
+import Capsule from './components/landing_page/capsule.jsx';
 
 const App = () => {
   return (
     <div>
       <Capsule />
-      <ImageSlider />
+      
     </div>
   );
 }

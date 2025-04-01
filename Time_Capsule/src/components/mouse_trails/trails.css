@@ -1,0 +1,24 @@
+
+body {
+    cursor: none;
+  }
+  
+  .cursor-trail {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    filter: blur(2px);
+    transform-origin: center;
+    transition: transform 0.1s ease-out;
+    mix-blend-mode: multiply;
+    background-color: brown; 
+  }
+  
+
+  .cursor-trail:hover {
+    transform: scale(1.2); 
+  }
+  

@@ -1,0 +1,121 @@
+body {
+  background: radial-gradient(circle at 30% 30%, rgba(245, 235, 220, 0.95), rgba(230, 215, 195, 0.98)),
+              radial-gradient(circle at 70% 70%, rgba(250, 240, 225, 0.9), rgba(225, 210, 190, 0.9));
+  color: #5a4a42;
+  margin: 0;
+  padding: 0;
+  font-family: 'Delius Swash Caps';
+  overflow: hidden;
+  position: relative;
+}
+
+/* Main Content */
+.Welcome {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding-top: 5vh;
+}
+
+.welcome-messages {
+  margin-top: 2rem;
+  margin-bottom: auto;
+}
+
+.dancing-script {
+  font-family: 'Delius Swash Caps';
+  font-weight: 700;
+  font-size: 6.5rem;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  color: #6d5c54;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(220, 150, 150, 0.5);
+}
+
+.dancing-script1 {
+  font-family: 'Delius Swash Caps';
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  color: #7d6d65;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 10px rgba(220, 150, 150, 0.4);
+}
+
+/* File Upload Section */
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10vh;
+}
+
+.custom-file-upload {
+  padding: 12px 24px;
+  background: rgba(245, 235, 220, 0.7);
+  color: #a05c4a;
+  border: 1px solid rgba(180, 140, 120, 0.3);
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(180, 140, 120, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.custom-file-upload:hover {
+  box-shadow: 0 0 20px rgba(180, 140, 120, 0.5);
+  transform: scale(1.05);
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.selected-file {
+  color: #a05c4a;
+  text-shadow: 0 0 5px rgba(245, 235, 220, 0.5);
+  font-size: 0.9rem;
+  max-width: 100%;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* Upload Button */
+button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: #c07060;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(192, 112, 96, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #a05c4a;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 235, 220, 0.6);
+}
+
+button:active {
+  transform: scale(0.95);
+}
