@@ -1,14 +1,14 @@
-import React from 'react'
-import Capsule from './capsule.jsx'
-import ImageSlider from './components/imageSlider.jsx'
+import React from 'react';
+import Capsule from './Capsule';
+import ImageSlider from './components/ImageSlider';
 
 const App = () => {
   return (
     <div>
-        <Capsule />
-        <ImageSlider />
+      <Capsule />
+      <ImageSlider />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

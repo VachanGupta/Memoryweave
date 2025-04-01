@@ -1,6 +1,6 @@
 body {
-  background: radial-gradient(circle at 30% 30%, rgba(3, 9, 34, 0.8), rgba(10, 10, 10, 0.9)), 
-              radial-gradient(circle at 70% 70%, rgba(20, 20, 60, 0.8), rgba(10, 10, 10, 0.8));
+background: radial-gradient(circle at 30% 30%, rgba(255, 245, 235, 0.95), rgba(245, 230, 210, 0.98)),
+              radial-gradient(circle at 70% 70%, rgba(255, 250, 240, 0.9), rgba(235, 220, 200, 0.9));
   color: white;
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body {
   cursor: none;
 }
 
-/* Enhanced Blobs */
+/* Blob Effects */
 .blob {
   position: absolute;
   width: 600px;
@@ -62,76 +62,90 @@ body {
   mix-blend-mode: screen;
 }
 
-/* Content Styles */
+/* Main Content - Updated for top alignment */
 .Welcome {
   text-align: center;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Changed to push content to top */
   align-items: center;
-  padding-top: 20px;
   position: relative;
   z-index: 2;
+  padding-top: 5vh; /* Added space at top */
+}
+
+.welcome-messages {
+  margin-top: 2rem;
+  margin-bottom: auto; /* Pushes messages to top */
 }
 
 .dancing-script {
   font-family: 'Delius Swash Caps';
   font-weight: 700;
-  font-size: 5.5rem;
+  font-size: 6.5rem;
   letter-spacing: 2px;
   text-transform: capitalize;
-  margin-bottom: 0.1rem; 
+  margin-bottom: 0.5rem;
   text-shadow: 0 0 15px rgba(3, 155, 195, 0.7);
 }
 
 .dancing-script1 {
   font-family: 'Delius Swash Caps';
   font-weight: 700;
-  font-size: 2.75rem;
-  letter-spacing: .5px;
+  font-size: 1.7rem;
+  letter-spacing: 0.5px;
   text-transform: capitalize;
-  margin-bottom: 0.1rem;
+  margin-bottom: 3rem;
   text-shadow: 0 0 10px rgba(3, 155, 195, 0.5);
 }
 
-.dancing-script2 {
-  font-family: 'Delius Swash Caps';
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: .5px;
-  text-transform: capitalize;
-  margin-bottom: 6rem;
-  text-shadow: 0 0 8px rgba(3, 155, 195, 0.4);
+/* File Upload Section */
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10vh; /* Space from bottom */
 }
 
-.file-input, 
-.timer-input {
-  margin: 20px 0;
-  padding: 12px;
-  font-size: 1rem;
-  background-color: rgba(26, 26, 26, 0.8);
+.custom-file-upload {
+  padding: 12px 24px;
+  background: rgba(26, 26, 26, 0.8);
   color: #039BC3;
-  border: 1px solid #039BC3;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 30px;
   box-shadow: 0 0 15px rgba(3, 155, 195, 0.5);
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  border: none;
 }
 
-.file-input:hover,
-.timer-input:hover {
+.custom-file-upload:hover {
   box-shadow: 0 0 20px rgba(3, 155, 195, 0.8);
+  transform: scale(1.05);
 }
 
-.timer-input {
-  margin-bottom: 4rem;
+.hidden-file-input {
+  display: none;
 }
 
+.selected-file {
+  color: #039BC3;
+  text-shadow: 0 0 5px rgba(3, 155, 195, 0.5);
+  font-size: 0.9rem;
+  max-width: 100%;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* Upload Button */
 button {
   padding: 12px 24px;
   font-size: 1.1rem;
@@ -144,6 +158,7 @@ button {
   border-radius: 30px;
   font-weight: bold;
   letter-spacing: 1px;
+  width: 100%;
 }
 
 button:hover {
@@ -154,4 +169,33 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dancing-script {
+    font-size: 4rem;
+  }
+  
+  .dancing-script1 {
+    font-size: 1.2rem;
+  }
+  
+  .Welcome {
+    padding-top: 3vh;
+  }
+  
+  .file-upload-container {
+    margin-bottom: 5vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .dancing-script {
+    font-size: 3rem;
+  }
+  
+  .dancing-script1 {
+    font-size: 1rem;
+  }
 }

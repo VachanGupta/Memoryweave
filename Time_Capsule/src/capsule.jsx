@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './capsule.css';
+import './Capsule.css';
 
 const Capsule = () => {
   const [file, setFile] = useState(null);
-  const [timer, setTimer] = useState('');
   const [trail, setTrail] = useState([]);
 
   // Mouse trail effect
@@ -38,16 +37,11 @@ const Capsule = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (file && timer) {
+    if (file) {
       console.log("File selected:", file.name);
-      console.log("Timer set for:", timer);
     } else {
-      console.log("No file or timer set!");
+      console.log("No file selected!");
     }
-  };
-
-  const handleTimerChange = (e) => {
-    setTimer(e.target.value);
   };
 
   return (
@@ -71,23 +65,23 @@ const Capsule = () => {
       ))}
 
       <div className='Welcome'>
-        <h1 className="dancing-script">Welcome to the memory vault.</h1>
-        <h1 className="dancing-script1">You can store your memories here.</h1>
-        <h1 className="dancing-script2">We'll keep it safe for you.</h1>
+        <h1 className="dancing-script">Welcome to Memoryweave</h1>
+        <h1 className="dancing-script1">Every moment tells a story—let's weave yours into something unforgettable.</h1>
 
-        <input 
-          type="file" 
-          onChange={handleFileChange} 
-          className="file-input"
-        />
-        
-        <input 
-          type="datetime-local"
-          onChange={handleTimerChange}
-          className="timer-input"
-        />
-
-        <button onClick={handleSubmit}>Upload</button>
+        <div className="file-upload-container">
+          <label className="custom-file-upload">
+            <input 
+              type="file" 
+              onChange={handleFileChange} 
+              className="hidden-file-input"
+            />
+            Choose File
+          </label>
+          {file && (
+            <p className="selected-file">{file.name}</p>
+          )}
+          <button onClick={handleSubmit}>Upload</button>
+        </div>
       </div>
     </div>
   );

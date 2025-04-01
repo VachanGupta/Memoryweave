@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import "./imageSlider.css";
+import "./ImageSlider.css";
 
 import img1 from "./images/1.jpg";
 import img2 from "./images/2.jpg";
@@ -23,11 +23,11 @@ const ImageSlider = () => {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
 
   const handleNext = () => {
-    setPositionIndexes((prev) => prev.map((i) => (i + 1) % 5));
+    setPositionIndexes(prev => prev.map(i => (i + 1) % 5));
   };
 
   const handleBack = () => {
-    setPositionIndexes((prev) => prev.map((i) => (i + 4) % 5));
+    setPositionIndexes(prev => prev.map(i => (i + 4) % 5));
   };
 
   return (
