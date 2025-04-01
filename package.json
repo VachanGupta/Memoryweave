@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "framer-motion": "^12.6.2",
+    "react-clouds": "^1.0.0"
+  }
+}
