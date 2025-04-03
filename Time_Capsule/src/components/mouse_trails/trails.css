@@ -13,7 +13,7 @@ body {
     filter: blur(2px);
     transform-origin: center;
     transition: transform 0.1s ease-out;
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply; */
     background-color: brown; 
   }
   

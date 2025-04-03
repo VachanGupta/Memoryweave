@@ -1,28 +1,22 @@
 import React, { useState } from 'react';
 import './Capsule.css';
 import MouseTrail from '../mouse_trails/trails.jsx'; 
-import Blobs from '../blobs/blobs.jsx';  // Import the Blobs component
+import Blobs from '../blobs/blobs.jsx';  
 
-const Capsule = () => {
-  const [file, setFile] = useState(null);
+const Capsule = ({ onUpload }) => { 
+  const [files, setFiles] = useState([]);
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (file) {
-      console.log("File selected:", file.name);
-    } else {
-      console.log("No file selected!");
-    }
+    const newFiles = Array.from(e.target.files);
+    const imageUrls = newFiles.map(file => URL.createObjectURL(file)); // Convert to URLs
+    setFiles(newFiles);
+    onUpload(imageUrls); // Send to App.jsx
   };
 
   return (
     <div>
       <MouseTrail />
-      <Blobs /> 
+      {/* <Blobs />  */}
 
       <div className='Welcome'>
         <h1 className="dancing-script">Welcome to Memoryweave</h1>
@@ -32,15 +26,16 @@ const Capsule = () => {
           <label className="custom-file-upload">
             <input 
               type="file" 
+              multiple
               onChange={handleFileChange} 
               className="hidden-file-input"
+              accept="image/*"
             />
-            Choose File
+            Choose Files
           </label>
-          {file && (
-            <p className="selected-file">{file.name}</p>
+          {files.length > 0 && (
+            <p className="selected-file">{files.length} file(s) selected</p>
           )}
-          <button onClick={handleSubmit}>Upload</button>
         </div>
       </div>
     </div>
