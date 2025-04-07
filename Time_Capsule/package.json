@@ -1,5 +1,5 @@
 {
-  "name": "package.json",
+  "name": "my-vite-react-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "framer-motion": "^12.6.3",
-    "motion": "^12.6.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
