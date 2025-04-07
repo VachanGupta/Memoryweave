@@ -32,9 +32,7 @@ const Slider = ({ images }) => {
 
   return (
     <div className="slider">
-      {images.length === 0 ? (
-        <p className="no-images">Upload images to see the carousel!</p>
-      ) : (
+      {images.length > 0 && (
         <>
           <div className="list" ref={sliderRef}>
             {images.map((src, index) => (

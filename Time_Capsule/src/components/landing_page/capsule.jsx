@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import './Capsule.css';
 import MouseTrail from '../mouse_trails/trails.jsx'; 
-import Blobs from '../blobs/blobs.jsx';  
+import Blobs from '../blobs/blobs.jsx';
+
 
 const Capsule = ({ onUpload }) => { 
   const [files, setFiles] = useState([]);
 
   const handleFileChange = (e) => {
     const newFiles = Array.from(e.target.files);
-    const imageUrls = newFiles.map(file => URL.createObjectURL(file)); // Convert to URLs
+    const imageUrls = newFiles.map(file => URL.createObjectURL(file)); 
     setFiles(newFiles);
-    onUpload(imageUrls); // Send to App.jsx
+    onUpload(imageUrls); 
   };
 
   return (
     <div>
       <MouseTrail />
-      {/* <Blobs />  */}
+      <Blobs /> 
 
       <div className='Welcome'>
         <h1 className="dancing-script">Welcome to Memoryweave</h1>
